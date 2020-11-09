@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>chatbot</title>
+    <link rel="stylesheet" href="css1/vegas.min.css">
+  </head>
+  <style>
+    body {
+  background-image: url('images/co3.png');
+
+}
+h2 {
+  color: #ffffff;
+  padding-bottom: 10px;
+}
+h1 {
+  color: #ffffff;
+  padding-bottom: 8px;
+  font-weight: 200;
+  font-size: 1.0em;
+}
+.content {
+ max-width: 500px;
+ margin: auto;
+}
+.ml12 {
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+</style>
+<body>
+<h2>WELCOME TO  COVID-19 CHATBOT!</h2>
+<h1 class="ml12"> WEAR MASK,MAINTAIN DISTANCE AND BE SAFE</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<div class="content">
+  <iframe width="400" height="550" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/2f906992-63a5-4f33-9f9c-619f84379b19"></iframe>
+</div>
+<h1>Ask any query regarding covit-19</h1>
+
+<script>
+var textWrapper = document.querySelector('.ml12');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml12 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+  }).add({
+    targets: '.ml12 .letter',
+    translateX: [0,-30],
+    opacity: [1,0],
+    easing: "easeInExpo",
+    duration: 1100,
+    delay: (el, i) => 100 + 30 * i
+  });</script>
+
+</body>
+
+
+
+
+
+
+</html>
